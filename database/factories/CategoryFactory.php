@@ -15,15 +15,11 @@ class CategoryFactory extends Factory
      * @return array<string, mixed>
      */
     public function definition(): array
-
-
-    
+    {
         return [
             //
-            'nome' = $this->faker->unique()->word;
-            'descricao' = $this->faker->text;
-           
-            
-        ]
-
+            'nome' => $this->faker->unique()->word,
+            'descricao' => $this->faker->text
+        ];
+    }
 }
