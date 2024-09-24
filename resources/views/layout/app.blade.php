@@ -8,12 +8,13 @@
 </head>
 <body>
     <header>
+        @include('partials.navbar')
 
 
     </header>
 
     <main>
-@yield('content')
+        @yield('content')
     </main>
      
     <footer>
