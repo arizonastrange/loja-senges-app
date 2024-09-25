@@ -14,4 +14,8 @@ class SiteController extends Controller
         $categorias = Category::all();
         return view('site.home', compact(['produtos', 'categorias']));
     }
+    public function detalhes($slug){
+        $produto = Products::where('slug',$slug)->first();
+        return view('site.detalhes',compact('produto'));
+    }
 }
