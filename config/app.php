@@ -1,5 +1,9 @@
 <?php
 
+use Carbon\Laravel\ServiceProvider;
+use Illuminate\Support\Facades\Facade;
+use Illuminate\Support\ServiceProvider as SupportServiceProvider;
+
 return [
 
     /*
@@ -122,5 +126,8 @@ return [
         'driver' => env('APP_MAINTENANCE_DRIVER', 'file'),
         'store' => env('APP_MAINTENANCE_STORE', 'database'),
     ],
-
+    'providers' => SupportServiceProvider::defaultProviders()->merge([Darryldecode\Cart\CartServiceProvider::class])->toArray(),
+    'aliases' => Facade::defaultAliases()->merge([
+        'cart' => Darryldecode\Cart\Facades\CartFacade::class,
+    ])->toArray(),
 ];
