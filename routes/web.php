@@ -23,15 +23,15 @@ Route::get('/carrinho',[CarrinhoController::class,'lista'])
 
 
 
-// Route::post('/carrinho',[CarrinhoController::class,'adicionaCarrinho'])
-// ->name('site.addcarrinho');
+Route::post('/carrinho',[CarrinhoController::class,'adicionaCarrinho'])
+->name('site.addcarrinho');
 
-// Route::post('/carrinho/remove',[CarrinhoController::class,'removeCarrinho'])
-// ->name('site.remcarrinho');
+Route::post('/carrinho/remove',[CarrinhoController::class,'removeCarrinho'])
+->name('site.remcarrinho');
 
-// Route::post('/carrinho/atualiza',[CarrinhoController::class,'atualizarCarrinho'])
-// ->name('site.updatecarrinho');
+Route::post('/carrinho/atualiza',[CarrinhoController::class,'atualizarCarrinho'])
+->name('site.updatecarrinho');
 
-// Route::get('/carrinho/limpar',[CarrinhoController::class,'limparCarrinho'])
-// ->name('site.limparcarrinho');
+Route::get('/carrinho/limpar',[CarrinhoController::class,'limparCarrinho'])
+->name('site.limparcarrinho');
 
