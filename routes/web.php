@@ -20,9 +20,6 @@ Route::get('/site/categoria/{categoria}',
 Route::get('/carrinho',[CarrinhoController::class,'lista'])
 ->name('site.carrinho');
 
-
-
-
 Route::post('/carrinho',[CarrinhoController::class,'adicionaCarrinho'])
 ->name('site.addcarrinho');
 
@@ -34,4 +31,8 @@ Route::post('/carrinho/atualiza',[CarrinhoController::class,'atualizarCarrinho']
 
 Route::get('/carrinho/limpar',[CarrinhoController::class,'limparCarrinho'])
 ->name('site.limparcarrinho');
+
+Route::resources('/admin/categorias', CategoryController::class);
+
+Route::resources('/admin/produtos', ProductsController::class);
 
