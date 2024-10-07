@@ -9,9 +9,6 @@ use App\Models\Products;
 
 class ProductsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         //eu vou buscar informações do banco

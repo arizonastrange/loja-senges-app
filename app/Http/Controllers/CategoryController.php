@@ -8,9 +8,6 @@ use App\Models\Category;
 
 class CategoryController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         //
@@ -20,33 +17,21 @@ class CategoryController extends Controller
             compact('categorias')
         );
     }
-
-    /**
-     * Show the form for creating a new resource.
-     */
     public function create()
     {
         //
         return view('admin.categorias.create');
     }
-
-    /**
-     * Store a newly created resource in storage.
-     */
     public function store(StoreCategoryRequest $request)
     {
         //
         Category::create($request->all());
-        return redirect()->away('/categorias')
+        return redirect()->away('/admin/categorias')
             ->with(
                 'success',
                 'Categoria salva com sucesso!'
             );
     }
-
-    /**
-     * Display the specified resource.
-     */
     public function show(Category $category)
     {
         //
@@ -55,10 +40,6 @@ class CategoryController extends Controller
             compact('category')
         );
     }
-
-    /**
-     * Show the form for editing the specified resource.
-     */
     public function edit(Category $category)
     {
         //
@@ -67,36 +48,28 @@ class CategoryController extends Controller
             compact('category')
         );
     }
-
-    /**
-     * Update the specified resource in storage.
-     */
     public function update(UpdateCategoryRequest $request, Category $category)
     {
         //
         $category->update($request->all());
-        return redirect()->away('/categorias')
+        return redirect()->away('/admin/categorias')
             ->with(
                 'success',
                 'Categoria atualizada com sucesso!'
             );
     }
-
-    /**
-     * Remove the specified resource from storage.
-     */
     public function destroy(Category $category)
     {
         //
         if ($category->produtos()->count() > 0) {
-            return redirect()->away('/categorias')
+            return redirect()->away('/admin/categorias')
                 ->with(
                     'error',
                     'Categoria possui dependentes!'
                 );
         }
         $category->delete();
-        return redirect()->away('/categorias')
+        return redirect()->away('/admin/categorias')
             ->with(
                 'success',
                 'Categoria removida com suceso!'
