@@ -5,7 +5,7 @@
 
 <form action="/admin/categorias" method="POST">
     @csrf
- 
+    <!-- Nome -->
     <div class="form-group">
         <label for="nome">Nome:</label>
         <input type="text" name="nome" maxlength="255"
@@ -19,9 +19,9 @@
         </div>
         @endif
     </div>
-    
+    <!-- Descrição -->
     <div class="form-group">
-        <label for="descricao">descricao:</label>
+        <label for="descricao">Descrição:</label>
         <textarea name="descricao" minlength="3"
             id="descricao" value="{{old('descricao')}}"
             class="form-control @error('descricao') is-invalid @enderror">
